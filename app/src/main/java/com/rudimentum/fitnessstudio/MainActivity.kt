@@ -1,11 +1,13 @@
 package com.rudimentum.fitnessstudio
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var textView: TextView
@@ -26,7 +28,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_about_us -> {
-                textView.text = "About us!"
+                val intent = Intent(this@MainActivity, AboutActivity::class.java)
+                startActivity(intent)
                 return true
             }
             R.id.action_trainers -> {

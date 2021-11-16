@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity() {
                 textView.text = "Clubs!"
                 return true
             }
+            R.id.action_login -> {
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intent)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

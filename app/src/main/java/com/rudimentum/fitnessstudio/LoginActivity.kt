@@ -6,15 +6,13 @@ import android.widget.Button
 import android.widget.EditText
 
 class LoginActivity : Activity() {
-        lateinit var userEditEmail : EditText
-        lateinit var userEditPass : EditText
+        lateinit var userEmail : EditText
+        lateinit var userPass : EditText
         lateinit var signInButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        userEditEmail = findViewById(R.id.editTextTextPersonName)
-        userEditPass = findViewById(R.id.editTextTextPassword)
-        signInButton = findViewById(R.id.signIn)
-
+        setContentView(R.layout.activity_login)
     }
 }

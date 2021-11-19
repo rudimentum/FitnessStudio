@@ -15,5 +15,7 @@
     <string name="sign_in">Sign in</string>
     <string name="enter_email">Enter email or login</string>
     <string name="enter_password">Enter password</string>
-    <string name="sign_up_offer">Or you can sign up</string>
+    <string name="sign_up_offer">Don\'t have an account?</string>
+    <string name="sign_up_offer_link">Register now</string>
+
 </resources>

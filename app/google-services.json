@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "201393030321",
+    "project_id": "fitnessstudio-874aa",
+    "storage_bucket": "fitnessstudio-874aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201393030321:android:9be23ea912a019d6fa8e90",
+        "android_client_info": {
+          "package_name": "com.rudimentum.fitnessstudio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201393030321-3go9at7b48tna1e731mvf7u5ndjr13mq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rudimentum.fitnessstudio",
+            "certificate_hash": "17d24c61a9f4e9545b907dcd494a75d9d0ad4608"
+          }
+        },
+        {
+          "client_id": "201393030321-5sja9vimp4ga5a1log5ddhnrc9id6os3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9rXbFwoMiRaxQj5zfckcbPazwPVpekpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201393030321-5sja9vimp4ga5a1log5ddhnrc9id6os3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

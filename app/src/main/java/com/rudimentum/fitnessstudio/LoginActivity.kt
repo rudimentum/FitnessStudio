@@ -1,11 +1,11 @@
 package com.rudimentum.fitnessstudio
 
-import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 
-class LoginActivity : Activity() {
+class LoginActivity : AppCompatActivity() {
         lateinit var userEmail : EditText
         lateinit var userPass : EditText
         lateinit var signInButton: Button

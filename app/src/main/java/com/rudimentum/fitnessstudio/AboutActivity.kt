@@ -1,9 +1,9 @@
 package com.rudimentum.fitnessstudio
 
-import android.app.Activity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
-class AboutActivity() : Activity() {
+class AboutActivity() : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

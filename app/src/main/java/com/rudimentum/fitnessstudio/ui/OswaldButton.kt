@@ -3,11 +3,11 @@ package com.rudimentum.fitnessstudio.ui
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
 
 
-class BoldTextView(context: Context, attributeSet: AttributeSet)
-    : AppCompatTextView(context, attributeSet) {
+class OswaldButton(context: Context, attributeSet: AttributeSet)
+    : AppCompatButton(context, attributeSet) {
 
     init {
         applyFont()

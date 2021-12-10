@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@color/background_grey"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/headerImage"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="@dimen/auth_header_image_height"
         android:scaleType="centerCrop"
         android:contentDescription="@string/sign_in"
         android:layout_marginBottom="10dp"
@@ -17,18 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.rudimentum.fitnessstudio.ui.BoldTextView
         android:id="@+id/signInTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
         android:text="@string/sign_in"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/title_text_size"
+        android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerImage"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintTop_toBottomOf="@+id/headerImage" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLoginEmail"
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signInTitle">
 
-        <EditText
+        <com.rudimentum.fitnessstudio.ui.OswaldEditText
             android:id="@+id/editTextLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputLoginEmail">
 
-        <EditText
+        <com.rudimentum.fitnessstudio.ui.OswaldEditText
             android:id="@+id/editTextLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,20 +72,21 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.rudimentum.fitnessstudio.ui.OswaldButton
         android:id="@+id/btnLogin"
+        android:background="@drawable/button_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/button_blue"
+        android:padding="@dimen/btn_padding"
         android:gravity="center"
         android:textColor="@color/white"
+        android:textSize="@dimen/btn_text_size"
         android:text="@string/sign_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputLoginPassword" />
 
@@ -99,22 +100,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin">
 
-        <TextView
+        <com.rudimentum.fitnessstudio.ui.LightTextView
             android:id="@+id/registerOfferText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="5dp"
             android:text="@string/sign_up_offer" />
-        <TextView
+        <com.rudimentum.fitnessstudio.ui.BoldTextView
             android:id="@+id/registerOfferLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textStyle="bold"
             android:padding="5dp"
             android:text="@string/register" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

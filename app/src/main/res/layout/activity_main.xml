@@ -7,11 +7,11 @@
     android:background="@color/background_grey"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.rudimentum.fitnessstudio.ui.LightTextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
+        android:text="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -8,15 +8,22 @@
     <string name="action_shop">Shop</string>
     <string name="about_title">Hit us up</string>
     <string name="about_description">
-        Don’t be shy. We’d love to hear from you and how we can enhance your 1R experience
+        Don\’t be shy. We’d love to hear from you and how we can enhance your 1R experience
         even further. Choose from the options below and we\'ll do our best to help.
         Feel free to also drop by the studios and chat with our team (gifts accepted).
     </string>
+
     <string name="sign_in">Sign in</string>
-    <string name="enter_email">Enter email or login</string>
+    <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter password</string>
+    <string name="forgot_password">Forgot password</string>
     <string name="sign_up_offer">Don\'t have an account?</string>
     <string name="sign_in_offer">Already have an account?</string>
     <string name="register">Register</string>
 
+    <string name="create_an_account">CREATE AN ACCOUNT</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="agreeing">I agree to <u>The Terms &amp; Condition</u></string>
 </resources>

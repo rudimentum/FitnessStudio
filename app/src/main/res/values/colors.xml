@@ -6,4 +6,6 @@
     <color name="background_grey">#f2f3f4</color>
     <color name="button_start_blue">#87cefa</color>
     <color name="button_end_blue">#1e90ff</color>
+    <color name="snack_bar_error">#8bc34a</color>
+    <color name="snack_bar_access">#f72400</color>
 </resources>

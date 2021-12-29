@@ -26,4 +26,14 @@
     <string name="hint_last_name">Last name</string>
     <string name="hint_confirm_password">Confirm password</string>
     <string name="agreeing">I agree to <u>The Terms &amp; Condition</u></string>
+    <string name="error_msg_first_name">Please enter first name</string>
+    <string name="error_msg_last_name">Please enter last name</string>
+    <string name="error_msg_email">Please enter email</string>
+    <string name="error_msg_password">Please enter password</string>
+    <string name="error_msg_confirm_password">Please enter confirm password</string>
+    <string name="error_msg_mismatch_passwords">Password and confirm password does not match</string>
+    <string name="error_msg_agree_terms_condition">Please agree Terms and Condition</string>
+    <string name="register_successful">Thanks for registering!</string>
+
+
 </resources>

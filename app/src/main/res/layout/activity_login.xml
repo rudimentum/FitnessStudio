@@ -32,11 +32,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLoginEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/enter_email"
+        android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signInTitle">
@@ -45,19 +48,21 @@
             android:id="@+id/editTextLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_email"
             android:importantForAutofill="no"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLoginPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/enter_password"
+        android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputLoginEmail">
@@ -66,11 +71,23 @@
             android:id="@+id/editTextLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_password"
             android:importantForAutofill="no"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.rudimentum.fitnessstudio.ui.LightTextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:padding="@dimen/clickable_text_padding"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/forgot_password"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/clickable_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLoginPassword" />
 
     <com.rudimentum.fitnessstudio.ui.OswaldButton
         android:id="@+id/btnLogin"
@@ -80,6 +97,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
+        android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/btn_padding"
         android:gravity="center"
         android:textColor="@color/white"
@@ -105,15 +123,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:padding="5dp"
-            android:text="@string/sign_up_offer" />
+            android:padding="@dimen/clickable_text_padding"
+            android:text="@string/sign_up_offer"
+            android:textSize="@dimen/clickable_text_size"/>
         <com.rudimentum.fitnessstudio.ui.BoldTextView
             android:id="@+id/registerOfferLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:padding="5dp"
-            android:text="@string/register" />
+            android:padding="@dimen/clickable_text_padding"
+            android:text="@string/register"
+            android:textSize="@dimen/clickable_text_size"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

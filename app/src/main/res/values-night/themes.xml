@@ -15,4 +15,8 @@
         <item name="android:itemBackground">@color/background_grey</item>
         <item name="android:itemTextAppearance">@style/customMenuTextAppearance</item>
     </style>
+    <style name="Theme.FitnessStudio.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

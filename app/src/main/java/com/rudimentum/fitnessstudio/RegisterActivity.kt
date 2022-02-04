@@ -10,13 +10,14 @@ class RegisterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        setUpActionBar()
+
         signInOfferLink.setOnClickListener {
             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        setUpActionBar()
-
+        // Assign a click event to the register button and call the validate function
         btnRegister.setOnClickListener {
             validateRegisterDetails()
         }
@@ -33,6 +34,9 @@ class RegisterActivity : BaseActivity() {
         toolbarRegister.setNavigationOnClickListener { onBackPressed() }
     }
 
+    /**
+     * A function to validate the entries of a new user.
+     */
     private fun validateRegisterDetails(): Boolean {
         return when {
             TextUtils.isEmpty(etFirstName.text.toString().trim { it <= ' '} ) -> {

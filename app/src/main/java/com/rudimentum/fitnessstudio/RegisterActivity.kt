@@ -1,8 +1,11 @@
 package com.rudimentum.fitnessstudio
 
 import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
 import android.os.Bundle
 import android.text.TextUtils
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : BaseActivity() {
@@ -13,8 +16,7 @@ class RegisterActivity : BaseActivity() {
         setUpActionBar()
 
         signInOfferLink.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
         // Assign a click event to the register button and call the validate function
@@ -70,6 +72,30 @@ class RegisterActivity : BaseActivity() {
             }
             else -> {
                 showErrorSnackBar(resources.getString(R.string.register_successful), false)
+                val name = "${etFirstName.text.toString().trim { it <= ' '}} ${etLastName.text.toString().trim { it <= ' '}}"
+                val email = etEmail.text.toString().trim { it <= ' '}
+                val password = etPassword.text.toString().trim { it <= ' '}
+
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
+
+                            val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                            // rid of stack
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            intent.putExtra("user_id", firebaseUser.uid)
+                            intent.putExtra("email_id", email)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                task.exception!!.message.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 true
             }
         }

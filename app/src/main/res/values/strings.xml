@@ -20,6 +20,7 @@
     <string name="sign_up_offer">Don\'t have an account?</string>
     <string name="sign_in_offer">Already have an account?</string>
     <string name="register">Register</string>
+    <string name="sign_out">Sign out</string>
 
     <string name="create_an_account">CREATE AN ACCOUNT</string>
     <string name="hint_first_name">First name</string>
@@ -33,7 +34,9 @@
     <string name="error_msg_confirm_password">Please enter confirm password</string>
     <string name="error_msg_mismatch_passwords">Password and confirm password does not match</string>
     <string name="error_msg_agree_terms_condition">Please agree Terms and Condition</string>
-    <string name="register_successful">Thanks for registering!</string>
+    <string name="register_successful">Successful! Thanks for registering!</string>
+    <string name="user_id">User ID ::</string>
+    <string name="email_id">Email ID ::</string>
 
 
 </resources>

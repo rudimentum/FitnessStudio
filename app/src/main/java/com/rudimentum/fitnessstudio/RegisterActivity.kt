@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.dialog_progress.*
 
 class RegisterActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +78,8 @@ class RegisterActivity : BaseActivity() {
 
     private fun registerUser() {
         if (validateRegisterDetails()) {
+            showProgressDialog(resources.getString(R.string.please_wait))
+
             val name = "${etFirstName.text.toString().trim { it <= ' ' }} ${
                 etLastName.text.toString().trim { it <= ' ' }
             }"
@@ -85,6 +88,9 @@ class RegisterActivity : BaseActivity() {
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
+
+                    hideProgressDialog()
+
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result!!.user!!
 

@@ -14,4 +14,9 @@
     <dimen name="toolbar_title_text_size">18sp</dimen>
     <dimen name="terms_and_condition_text_size">14sp</dimen>
     <dimen name="terms_and_condition_margin_start">10dp</dimen>
+
+    <dimen name="progress_bar_size">50dp</dimen>
+    <dimen name="progress_bar_text_size">16sp</dimen>
+    <dimen name="progress_bar_padding">10dp</dimen>
+    <dimen name="progress_text_margin_start">16dp</dimen>
 </resources>

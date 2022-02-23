@@ -3,6 +3,7 @@ package com.rudimentum.fitnessstudio
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -12,23 +13,35 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
-class LoginActivity : BaseActivity() {
+class LoginActivity : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
 
-        registerOfferLink.setOnClickListener {
+        forgotPassword.setOnClickListener(this)
+        registerOfferLink.setOnClickListener(this)
+        btnLogin.setOnClickListener(this)
+    }
 
-            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-            startActivity(intent)
-        }
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
+                R.id.forgotPassword -> {
 
-        btnLogin.setOnClickListener {
-            validateLoginDetails()
+                }
+                R.id.btnLogin -> {
+                    loginUser()
+                }
+                R.id.registerOfferLink -> {
+                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                    startActivity(intent)
+                }
+            }
         }
     }
+
 
     private fun validateLoginDetails(): Boolean {
         return when {
@@ -41,33 +54,42 @@ class LoginActivity : BaseActivity() {
                 false
             }
             else -> {
-                showErrorSnackBar(resources.getString(R.string.sign_in_successful), false)
-                val email = editTextLoginEmail.text.toString().trim { it <= ' '}
-                val password = editTextLoginPassword.text.toString().trim { it <= ' '}
-
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                            // rid of stack
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                            intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
-                            intent.putExtra("email_id", email)
-                            startActivity(intent)
-                            finish()
-                        } else {
-                            Toast.makeText(
-                                this@LoginActivity,
-                                task.exception!!.message.toString(),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
                 true
             }
         }
     }
 
+    private fun loginUser() {
+        if (validateLoginDetails()) {
 
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            val email = editTextLoginEmail.text.toString().trim { it <= ' '}
+            val password = editTextLoginPassword.text.toString().trim { it <= ' '}
+
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+
+                    hideProgressDialog()
+
+                    if (task.isSuccessful) {
+                        showErrorSnackBar(
+                            resources.getString(R.string.sign_in_successful),
+                            false)
+
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        // rid of stack
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
+                        intent.putExtra("email_id", email)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        showErrorSnackBar(
+                            task.exception!!.message.toString(),
+                            true)
+                    }
+                }
+        }
+    }
 }

@@ -19,4 +19,7 @@
     <dimen name="progress_bar_text_size">16sp</dimen>
     <dimen name="progress_bar_padding">10dp</dimen>
     <dimen name="progress_text_margin_start">16dp</dimen>
+
+    <dimen name="forgot_password_title_textSize">18sp</dimen>
+    <dimen name="forgot_password_description_textSize">16sp</dimen>
 </resources>

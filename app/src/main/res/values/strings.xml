@@ -16,7 +16,7 @@
     <string name="sign_in">Sign in</string>
     <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter password</string>
-    <string name="forgot_password">Forgot password</string>
+    <string name="forgot_password">Forgot password?</string>
     <string name="sign_up_offer">Don\'t have an account?</string>
     <string name="sign_in_offer">Already have an account?</string>
     <string name="register">Register</string>
@@ -40,5 +40,7 @@
     <string name="email_id">Email ID ::</string>
 
     <string name="please_wait">Please wait...</string>
+    <string name="forgot_password_description">We\'ll send you an email to reset your password</string>
 
+    <string name="button_submit">SUBMIT</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_forgot_password.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 class ForgotPasswordActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,9 @@ class ForgotPasswordActivity : BaseActivity() {
                         hideProgressDialog()
 
                         if (task.isSuccessful) {
-                            startActivity(Intent(this@ForgotPasswordActivity, LoginActivity::class.java))
+                            showErrorSnackBar(
+                                resources.getString(R.string.reset_password_successfully),
+                                false)
                             finish()
                         } else {
                             showErrorSnackBar(
@@ -38,5 +41,16 @@ class ForgotPasswordActivity : BaseActivity() {
 
             }
         }
+    }
+
+    private fun setUpActionBar() {
+        setSupportActionBar(toolbarForgotPassword)
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_black_color_back_24dp)
+        }
+
+        toolbarForgotPassword.setNavigationOnClickListener { onBackPressed() }
     }
 }

@@ -1,6 +1,10 @@
-*.iml
-.gradle
+# Gradle files
+.gradle/
+build/
+# Local configuration file (sdk path, etc)
 /local.properties
+# Android Studio
+*.iml
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -8,8 +12,10 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
+# Android Studio captures folder
 /captures
+# Log Files
+*.log
+
 .externalNativeBuild
 .cxx
-local.properties

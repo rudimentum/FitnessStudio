@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.rudimentum.fitnessstudio.ui.BoldTextView
+    <com.rudimentum.fitnessstudio.utils.BoldTextView
         android:id="@+id/signInTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signInTitle">
 
-        <com.rudimentum.fitnessstudio.ui.OswaldEditText
+        <com.rudimentum.fitnessstudio.utils.OswaldEditText
             android:id="@+id/editTextLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textInputLoginEmail">
 
-        <com.rudimentum.fitnessstudio.ui.OswaldEditText
+        <com.rudimentum.fitnessstudio.utils.OswaldEditText
             android:id="@+id/editTextLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.rudimentum.fitnessstudio.ui.LightTextView
+    <com.rudimentum.fitnessstudio.utils.LightTextView
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLoginPassword" />
 
-    <com.rudimentum.fitnessstudio.ui.OswaldButton
+    <com.rudimentum.fitnessstudio.utils.OswaldButton
         android:id="@+id/btnLogin"
         android:background="@drawable/button_background"
         android:layout_width="match_parent"
@@ -117,7 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin">
 
-        <com.rudimentum.fitnessstudio.ui.LightTextView
+        <com.rudimentum.fitnessstudio.utils.LightTextView
             android:id="@+id/registerOfferText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
             android:padding="@dimen/clickable_text_padding"
             android:text="@string/sign_up_offer"
             android:textSize="@dimen/clickable_text_size"/>
-        <com.rudimentum.fitnessstudio.ui.BoldTextView
+        <com.rudimentum.fitnessstudio.utils.BoldTextView
             android:id="@+id/registerOfferLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

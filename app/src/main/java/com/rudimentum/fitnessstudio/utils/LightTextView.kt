@@ -1,4 +1,4 @@
-package com.rudimentum.fitnessstudio.ui
+package com.rudimentum.fitnessstudio.utils
 
 import android.content.Context
 import android.graphics.Typeface

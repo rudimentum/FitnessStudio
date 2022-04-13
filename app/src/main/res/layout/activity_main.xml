@@ -17,19 +17,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.rudimentum.fitnessstudio.ui.BoldTextView
+        <com.rudimentum.fitnessstudio.utils.BoldTextView
             android:id="@+id/btvUserId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <com.rudimentum.fitnessstudio.ui.BoldTextView
+        <com.rudimentum.fitnessstudio.utils.BoldTextView
             android:id="@+id/btvEmailId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
-    <com.rudimentum.fitnessstudio.ui.OswaldButton
+    <com.rudimentum.fitnessstudio.utils.OswaldButton
         android:id="@+id/btnSignOut"
         android:background="@drawable/button_background"
         android:layout_width="match_parent"

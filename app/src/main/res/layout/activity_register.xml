@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.rudimentum.fitnessstudio.ui.BoldTextView
+        <com.rudimentum.fitnessstudio.utils.BoldTextView
             android:id="@+id/registerTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,7 +51,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            <com.rudimentum.fitnessstudio.ui.OswaldEditText
+            <com.rudimentum.fitnessstudio.utils.OswaldEditText
                 android:id="@+id/etFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tilFirstName">
 
-                <com.rudimentum.fitnessstudio.ui.OswaldEditText
+                <com.rudimentum.fitnessstudio.utils.OswaldEditText
                     android:id="@+id/etLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tilLastName">
 
-                <com.rudimentum.fitnessstudio.ui.OswaldEditText
+                <com.rudimentum.fitnessstudio.utils.OswaldEditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tilEmail">
 
-                <com.rudimentum.fitnessstudio.ui.OswaldEditText
+                <com.rudimentum.fitnessstudio.utils.OswaldEditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tilPassword">
 
-                <com.rudimentum.fitnessstudio.ui.OswaldEditText
+                <com.rudimentum.fitnessstudio.utils.OswaldEditText
                     android:id="@+id/etConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:checked="false"/>
 
-                <com.rudimentum.fitnessstudio.ui.LightTextView
+                <com.rudimentum.fitnessstudio.utils.LightTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/agreeing"
@@ -173,7 +173,7 @@
 
             </LinearLayout>
 
-            <com.rudimentum.fitnessstudio.ui.OswaldButton
+            <com.rudimentum.fitnessstudio.utils.OswaldButton
                 android:id="@+id/btnRegister"
                 android:background="@drawable/button_background"
                 android:layout_width="match_parent"
@@ -202,7 +202,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnRegister">
 
-                <com.rudimentum.fitnessstudio.ui.LightTextView
+                <com.rudimentum.fitnessstudio.utils.LightTextView
                     android:id="@+id/signInOfferText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                     android:textColor="@color/grey"
                     android:textSize="@dimen/clickable_text_size"/>
 
-                <com.rudimentum.fitnessstudio.ui.BoldTextView
+                <com.rudimentum.fitnessstudio.utils.BoldTextView
                     android:id="@+id/signInOfferLink"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -1,13 +1,13 @@
-package com.rudimentum.fitnessstudio.ui
+package com.rudimentum.fitnessstudio.utils
 
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 
 
-class OswaldButton(context: Context, attributeSet: AttributeSet)
-    : AppCompatButton(context, attributeSet) {
+class OswaldEditText(context: Context, attributeSet: AttributeSet)
+    : AppCompatEditText(context, attributeSet) {
 
     init {
         applyFont()

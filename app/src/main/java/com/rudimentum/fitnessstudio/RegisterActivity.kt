@@ -4,7 +4,10 @@ import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import android.os.Bundle
 import android.text.TextUtils
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseUser
+import com.rudimentum.fitnessstudio.firestore.FirestoreClass
+import com.rudimentum.fitnessstudio.models.User
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.dialog_progress.*
 
@@ -25,6 +28,9 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
+    /**
+     * A function for actionBar Setup.
+     */
     private fun setUpActionBar() {
         setSupportActionBar(toolbarRegister)
         val actionBar = supportActionBar
@@ -80,24 +86,28 @@ class RegisterActivity : BaseActivity() {
         if (validateRegisterDetails()) {
             showProgressDialog(resources.getString(R.string.please_wait))
 
-            val name = "${etFirstName.text.toString().trim { it <= ' ' }} ${
-                etLastName.text.toString().trim { it <= ' ' }
-            }"
+            val firstName = etFirstName.text.toString().trim { it <= ' ' }
+            val lastName = etLastName.text.toString().trim { it <= ' ' }
+            val name = "$firstName $lastName"
             val email = etEmail.text.toString().trim { it <= ' ' }
             val password = etPassword.text.toString().trim { it <= ' ' }
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
 
-                    hideProgressDialog()
-
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                        showErrorSnackBar(resources.getString(R.string.register_successful), false)
+                        val user = User(
+                            firebaseUser.uid,
+                            firstName,
+                            lastName,
+                            email
+                        )
+
+                        FirestoreClass().registerUser(this@RegisterActivity, user)
 
                         val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-                        // rid of stack
                         intent.flags =
                             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         intent.putExtra("user_id", firebaseUser.uid)
@@ -105,9 +115,22 @@ class RegisterActivity : BaseActivity() {
                         startActivity(intent)
                         finish()
                     } else {
+                        hideProgressDialog()
                         showErrorSnackBar(task.exception!!.message.toString(), true)
                     }
                 }
         }
+    }
+
+    fun userRegistrationSuccess() {
+        hideProgressDialog()
+
+        Toast.makeText(
+            this@RegisterActivity,
+            resources.getString(R.string.register_successful),
+            Toast.LENGTH_SHORT
+        ).show()
+
+        finish()
     }
 }

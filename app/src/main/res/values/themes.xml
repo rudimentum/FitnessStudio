@@ -2,18 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.FitnessStudio" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/background_grey</item>
+        <item name="colorPrimary">@color/background_grey</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/button_start_blue</item>
         <item name="colorSecondaryVariant">@color/button_end_blue</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:itemBackground">@color/background_grey</item>
-        <item name="android:itemTextAppearance">@style/customMenuTextAppearance</item>
+
     </style>
     <style name="Theme.FitnessStudio.NoActionBar">
         <item name="windowActionBar">false</item>
